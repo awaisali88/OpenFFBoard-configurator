@@ -1,79 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>Form</class>
- <widget class="QWidget" name="Form">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>499</width>
-    <height>468</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QGridLayout" name="gridLayout">
-   <item row="0" column="0">
-    <widget class="QGroupBox" name="groupBox">
-     <property name="title">
-      <string>PWM Output</string>
-     </property>
-     <layout class="QFormLayout" name="formLayout">
-      <item row="0" column="0">
-       <widget class="QLabel" name="label">
-        <property name="text">
-         <string>Output mode:</string>
+    <class>Form</class>
+    <widget class="QWidget" name="Form">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>499</width>
+                <height>468</height>
+            </rect>
         </property>
-       </widget>
-      </item>
-      <item row="0" column="1">
-       <widget class="QComboBox" name="comboBox_mode"/>
-      </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="label_2">
-        <property name="text">
-         <string>Frequency Preset:</string>
+        <property name="windowTitle">
+            <string>Form</string>
         </property>
-       </widget>
-      </item>
-      <item row="1" column="1">
-       <widget class="QComboBox" name="comboBox_freq"/>
-      </item>
-      <item row="2" column="0">
-       <widget class="QPushButton" name="pushButton_apply">
-        <property name="text">
-         <string>Apply</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
+        <layout class="QGridLayout" name="gridLayout">
+            <item row="0" column="0">
+                <widget class="QGroupBox" name="groupBox">
+                    <property name="title">
+                        <string>PWM Output</string>
+                    </property>
+                    <layout class="QFormLayout" name="formLayout">
+                        <item row="0" column="0">
+                            <widget class="QLabel" name="label">
+                                <property name="text">
+                                    <string>Output mode:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="0" column="1">
+                            <widget class="QComboBox" name="comboBox_mode" />
+                        </item>
+                        <item row="1" column="0">
+                            <widget class="QLabel" name="label_2">
+                                <property name="text">
+                                    <string>Frequency Preset:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="1" column="1">
+                            <widget class="QComboBox" name="comboBox_freq" />
+                        </item>
+                        <item row="2" column="0">
+                            <widget class="QLabel" name="label_2">
+                                <property name="text">
+                                    <string>Custom Freq for PWM:</string>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="2" column="1">
+                            <widget class="QSpinBox" name="spinBox_freq">
+                                <property name="suffix">
+                                    <string />
+                                </property>
+                                <property name="prefix">
+                                    <string />
+                                </property>
+                                <property name="maximum">
+                                    <number>9999999</number>
+                                </property>
+                            </widget>
+                        </item>
+                        <item row="3" column="0">
+                            <widget class="QPushButton" name="pushButton_apply">
+                                <property name="text">
+                                    <string>Apply</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+            <item row="1" column="0">
+                <widget class="QGroupBox" name="groupBox_2">
+                    <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>1</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="title">
+                        <string>Usage</string>
+                    </property>
+                    <layout class="QVBoxLayout" name="verticalLayout">
+                        <item>
+                            <widget class="QLabel" name="label_3">
+                                <property name="text">
+                                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Set FFB to max power for full range.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Connections:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;RC PPM:&lt;br/&gt;&lt;/span&gt;PWM1: 1000-2000µs with 0 at 1500µs&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Centered PWM:&lt;br/&gt;&lt;/span&gt;PWM1: PWM with 0 torque at 50%, -100% at 0% and 100% at 100% pwm&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Dual PWM:&lt;br/&gt;&lt;/span&gt;0-100% on PWM1 if torque positive, PWM2 0%&lt;br/&gt;0-100% on PWM2 if torque negative, PWM1 0%&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;PWM/DIR:&lt;br/&gt;&lt;/span&gt;PWM1: PWM output&lt;br/&gt;PWM3: Direction (left, inverted to PWM4)&lt;br/&gt;PWM4: Direction (right)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                                </property>
+                            </widget>
+                        </item>
+                    </layout>
+                </widget>
+            </item>
+        </layout>
     </widget>
-   </item>
-   <item row="1" column="0">
-    <widget class="QGroupBox" name="groupBox_2">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>1</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="title">
-      <string>Usage</string>
-     </property>
-     <layout class="QVBoxLayout" name="verticalLayout">
-      <item>
-       <widget class="QLabel" name="label_3">
-        <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Set FFB to max power for full range.&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; font-weight:600;&quot;&gt;Connections:&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;RC PPM:&lt;br/&gt;&lt;/span&gt;PWM1: 1000-2000µs with 0 at 1500µs&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Centered PWM:&lt;br/&gt;&lt;/span&gt;PWM1: PWM with 0 torque at 50%, -100% at 0% and 100% at 100% pwm&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;Dual PWM:&lt;br/&gt;&lt;/span&gt;0-100% on PWM1 if torque positive, PWM2 0%&lt;br/&gt;0-100% on PWM2 if torque negative, PWM1 0%&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline;&quot;&gt;PWM/DIR:&lt;br/&gt;&lt;/span&gt;PWM1: PWM output&lt;br/&gt;PWM3: Direction (left, inverted to PWM4)&lt;br/&gt;PWM4: Direction (right)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-        </property>
-       </widget>
-      </item>
-     </layout>
-    </widget>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
+    <resources />
+    <connections />
 </ui>

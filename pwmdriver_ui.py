@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QDialog
 from PyQt6.QtWidgets import QWidget
 from PyQt6.QtWidgets import QMessageBox,QVBoxLayout,QCheckBox,QButtonGroup 
 from PyQt6 import uic
-from helper import res_path,classlistToIds
+from helper import res_path,classlistToIds,qtBlockAndCall
 from PyQt6.QtCore import QTimer
 import main
 from base_ui import WidgetUI
@@ -23,6 +23,8 @@ class PwmDriverUI(WidgetUI,CommunicationHandler):
 
         self.registerCallback("pwmdrv","mode",self.pwmmode_cb,0,str,typechar='!')
         self.registerCallback("pwmdrv","mode",self.comboBox_mode.setCurrentIndex,0,int,typechar='?')
+
+        self.getValueAsync("pwmdrv","cfreq",self.spinBox_freq.setValue,0,int)
 
         self.initUi()
 
@@ -49,5 +51,6 @@ class PwmDriverUI(WidgetUI,CommunicationHandler):
     def apply(self):
         self.sendValue("pwmdrv","mode",self.comboBox_mode.currentData())
         self.sendValue("pwmdrv","freq",self.comboBox_freq.currentData())
+        self.sendValue("pwmdrv","cfreq",self.spinBox_freq.value())
         self.initUi() # Update UI
 
